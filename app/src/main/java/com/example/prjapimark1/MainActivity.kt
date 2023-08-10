@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.google.gson.Gson
 import java.net.URL
 import java.util.concurrent.Executors
@@ -39,7 +40,9 @@ class MainActivity : AppCompatActivity() {
                         val userInfo = User_Info(desiredUser.Name, desiredUser.Surname, desiredUser.Amount)
                         userInfo.show(supportFragmentManager, "userInfo")
                     } else {
+                        Toast.makeText(this, "No data was found",Toast.LENGTH_LONG).show()
                         Log.d("DesiredUser", "User with PlanID $desiredPlanID not found.")
+
                     }
                 }
             }
